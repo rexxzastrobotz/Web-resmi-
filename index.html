@@ -4,8 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Resmi Alecia</title>
   <style>
-    /* ...semua style kamu... */
-
     * {
       margin: 0;
       padding: 0;
@@ -35,7 +33,7 @@
     .thumbnail {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: url('https://files.catbox.moe/zhyqab.jpg') no-repeat center center/cover;
+      background: url('https://files.catbox.moe/qgntt0.png') no-repeat center center/cover;
     }
 
     .profile {
@@ -84,12 +82,13 @@
       text-decoration: none;
       color: #000;
       background-color: #f9f9f9;
-      box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
-      transition: background-color 0.2s;
+      box-shadow: 6px 6px 0 #000; /* Shadow ke kanan dan bawah */
+      transition: background-color 0.2s, box-shadow 0.2s;
     }
 
     .link-button:hover {
       background-color: #eee;
+      box-shadow: 8px 8px 0 #000; /* Shadow lebih besar saat hover */
     }
 
     .link-button img {
@@ -211,7 +210,6 @@
       z-index: 1;
     }
 
-    /* ✨ Fade in up animation */
     .fade-in-up {
       opacity: 0;
       transform: translateY(30px);
