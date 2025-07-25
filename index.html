@@ -1,307 +1,113 @@
-<!DOCTYPE html>
-<html lang="id"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Resmi Alecia</title>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Alecia Techno</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: sans-serif;
-      background-color: #ffffff;
-      color: #000000;
-    }
-
     body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family: 'Patrick Hand', cursive;
     }
 
-    .header {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .thumbnail {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: url('https://files.catbox.moe/qgntt0.png') no-repeat center center/cover;
-    }
-
-    .profile {
-      margin-top: -60px;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #000;
-      background-color: #000;
-      object-fit: cover;
-    }
-
-    .profile h1 {
-      margin-top: 10px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .profile p {
-      margin-top: 6px;
-      font-size: 16px;
-      color: #444;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .links {
-      width: 100%;
-      max-width: 500px;
-      margin: 30px auto 0;
-      padding: 0 20px;
-    }
-
-    .link-button {
-      display: flex;
-      align-items: center;
-      border: 2px solid #000;
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 15px;
-      text-decoration: none;
-      color: #000;
-      background-color: #f9f9f9;
-      box-shadow: 6px 6px 0 #000; /* Shadow ke kanan dan bawah */
-      transition: background-color 0.2s, box-shadow 0.2s;
-    }
-
-    .link-button:hover {
-      background-color: #eee;
-      box-shadow: 8px 8px 0 #000; /* Shadow lebih besar saat hover */
-    }
-
-    .link-button img {
-      width: 24px;
-      height: 24px;
-      margin-right: 12px;
-    }
-
-    .link-button span {
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .owner-button {
-      animation: floatFast 1s infinite ease-in-out;
-    }
-
-    @keyframes floatFast {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-5px); }
-      100% { transform: translateY(0); }
-    }
-
-    .description {
-      margin-top: 30px;
-      font-size: 15px;
-      font-weight: bold;
-      color: #000;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .feature-title {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 0 20px 50px;
-    }
-
-    .card {
-      border: 2px solid #000;
-      border-radius: 16px;
-      padding: 20px;
-      max-width: 360px;
-      text-align: center;
-      background-color: #fff;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    .animate-fadeInUp {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
 
-    .card.show {
+    .animate-fadeInUp.active {
       opacity: 1;
       transform: translateY(0);
     }
-
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .card img {
-      width: 50px;
-      margin-bottom: 15px;
-    }
-
-    .card h2 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 15px;
-    }
-
-    .card a button {
-      padding: 10px 20px;
-      border: 2px solid #000;
-      background-color: #f0f0f0;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .card a button:hover {
-      background-color: #ddd;
-    }
-
-    .footer {
-      flex-shrink: 0;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #000000;
-      background-color: #fff;
-      border-top: 1px solid #ccc;
-      position: relative;
-      z-index: 1;
-    }
-
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
-</head>
-<body>
-  <div class="header fade-in-up">
-    <div class="thumbnail"></div>
-    <div class="profile">
-      <img src="https://files.catbox.moe/jtgcih.jpg" alt="Naruya Logo">
-      <h1>Alecia Techno</h1>
-      <p>Hello! I’m Alecia Tech, ready to assist you on WhatsApp.</p>
-    </div>
-  </div>
-
-  <div class="links fade-in-up">
-    <a href="https://whatsapp.com/channel/0029VbAaNTlGpLHU4sWbwT36" class="link-button">
-      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png">
-      <span>Channel WhatsApp Alecia</span>
+ </head>
+ <body class="bg-white text-black min-h-screen flex flex-col justify-between">
+  <main class="max-w-md w-full mx-auto px-4 pt-6 pb-12">
+   <div class="flex flex-col items-center">
+    <img alt="Anime girl with long silver hair holding a black cat, circular cropped" class="w-24 h-24 rounded-full border-2 border-black object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/1683684e-bfb2-486f-936f-9c5bbdce88dd.jpg" width="100"/>
+    <h1 class="mt-2 font-bold text-lg">Alecia Techno</h1>
+    <p class="mt-1 text-center text-xs max-w-[280px]">Hello! I'm Alecia Tech, ready to assist you on WhatsApp.</p>
+   </div>
+   <div class="mt-4 space-y-3">
+    <a class="flex items-center gap-2 border-2 border-black rounded-lg px-4 py-2 shadow-[4px_4px_0_0_black] hover:shadow-none transition-shadow duration-150" href="#">
+     <i class="fab fa-whatsapp text-base"></i>
+     <span class="text-sm">Channel WhatsApp Alecia</span>
     </a>
-    <a href="https://chat.whatsapp.com/BuORXg43p6T0cjEedoGUWO" class="link-button">
-      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png">
-      <span>Group Resmi Alecia</span>
+    <a class="flex items-center gap-2 border-2 border-black rounded-lg px-4 py-2 shadow-[4px_4px_0_0_black] hover:shadow-none transition-shadow duration-150" href="#">
+     <i class="fab fa-whatsapp text-base"></i>
+     <span class="text-sm">Group Resmi Alecia</span>
     </a>
-    <a href="https://instagram.com/USERNAME" class="link-button">
-      <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png">
-      <span>Instagram</span>
+    <a class="flex items-center gap-2 border-2 border-black rounded-lg px-4 py-2 shadow-[4px_4px_0_0_black] hover:shadow-none transition-shadow duration-150" href="#">
+     <i class="fab fa-instagram text-base"></i>
+     <span class="text-sm">Instagram</span>
     </a>
-    <a href="https://wa.me/6287842203625" class="link-button owner-button">
-      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png">
-      <span>WhatsApp Owner</span>
+    <a class="flex items-center gap-2 border-2 border-black rounded-lg px-4 py-2 shadow-[4px_4px_0_0_black] hover:shadow-none transition-shadow duration-150" href="#">
+     <i class="fab fa-whatsapp text-base"></i>
+     <span class="text-sm">WhatsApp Owner</span>
     </a>
-    <p class="description">
-      Bot WhatsApp dengan fitur lengkap untuk kebutuhan pribadi dan grup Anda!
-    </p>
-  </div>
-
-  <div class="feature-title">Fitur Utama</div>
-
-  <div class="container">
-    <main class="cards">
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/speech-bubble.png">
-        <h2>Auto Responder</h2>
-        <p>Membalas pesan secara otomatis sesuai perintah Anda.</p>
-        <a href="https://wa.me/6287842203625"><button>Gunakan</button></a>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/conference.png">
-        <h2>Manajemen Grup</h2>
-        <p>Kelola grup Anda dengan fitur otomatis seperti welcome message.</p>
-        <a href="https://wa.me/6287842203625"><button>Pelajari</button></a>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/controller.png">
-        <h2>Game Interaktif</h2>
-        <p>Mainkan berbagai game seperti kuis, tebak gambar, dan lainnya.</p>
-        <a href="https://wa.me/6287842203625"><button>Mainkan</button></a>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/100/000000/privacy.png">
-        <h2>Keamanan Data</h2>
-        <p>Data Anda aman dengan fitur privasi dan enkripsi.</p>
-        <a href="https://wa.me/6287842203625?text=jelaskan%20tentang%20keamanan%20data"><button>Cek Sekarang</button></a>
-      </div>
-    </main>
-    <footer class="footer">
-      © 2024 Alecia Bot - All rights reserved.
-    </footer>
-  </div>
+   </div>
+   <p class="mt-4 text-center text-xs max-w-[280px] mx-auto">
+    Bot WhatsApp dengan fitur lengkap untuk kebutuhan pribadi dan grup Anda!
+   </p>
+   <h2 class="mt-6 text-center font-semibold text-base">Fitur Utama</h2>
+   <section class="mt-3 space-y-4">
+    <article class="border-2 border-black rounded-lg p-4 shadow-[4px_4px_0_0_black] flex flex-col items-center text-center animate-fadeInUp">
+     <i class="fas fa-comment-alt text-3xl mb-2"></i>
+     <h3 class="font-semibold text-sm">Auto Responder</h3>
+     <p class="text-xs max-w-[260px]">Membalas pesan secara otomatis sesuai perintah Anda.</p>
+     <button class="mt-3 border-2 border-black rounded px-4 py-1 text-xs hover:bg-black hover:text-white transition-colors duration-150">Gunakan</button>
+    </article>
+    <article class="border-2 border-black rounded-lg p-4 shadow-[4px_4px_0_0_black] flex flex-col items-center text-center animate-fadeInUp">
+     <i class="fas fa-users text-3xl mb-2"></i>
+     <h3 class="font-semibold text-sm">Manajemen Grup</h3>
+     <p class="text-xs max-w-[260px]">Kelola grup Anda dengan fitur otomatis seperti welcome message.</p>
+     <button class="mt-3 border-2 border-black rounded px-4 py-1 text-xs hover:bg-black hover:text-white transition-colors duration-150">Pelajari</button>
+    </article>
+    <article class="border-2 border-black rounded-lg p-4 shadow-[4px_4px_0_0_black] flex flex-col items-center text-center animate-fadeInUp">
+     <i class="fas fa-gamepad text-3xl mb-2"></i>
+     <h3 class="font-semibold text-sm">Game Interaktif</h3>
+     <p class="text-xs max-w-[260px]">Mainkan berbagai game seperti kuis, tebak gambar, dan lainnya.</p>
+     <button class="mt-3 border-2 border-black rounded px-4 py-1 text-xs hover:bg-black hover:text-white transition-colors duration-150">Mainkan</button>
+    </article>
+    <article class="border-2 border-black rounded-lg p-4 shadow-[4px_4px_0_0_black] flex flex-col items-center text-center animate-fadeInUp">
+     <i class="fas fa-lock text-3xl mb-2"></i>
+     <h3 class="font-semibold text-sm">Keamanan Data</h3>
+     <p class="text-xs max-w-[260px]">Data Anda aman dengan fitur privasi dan enkripsi.</p>
+     <button class="mt-3 border-2 border-black rounded px-4 py-1 text-xs hover:bg-black hover:text-white transition-colors duration-150">Cek Sekarang</button>
+    </article>
+   </section>
+  </main>
+  <footer class="text-center text-xs pb-2 select-none">
+   <p>© 2024 Alecia Bot - All rights reserved.</p>
+  </footer>
 
   <script>
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
+    // Animasi saat pertama kali halaman dibuka
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("article").forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("active");
+        }, index * 200); // delay bertahap
       });
-    }, { threshold: 0.2 });
+    });
 
-    cards.forEach(card => observer.observe(card));
+    // Animasi saat scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll("article").forEach((card) => {
+      observer.observe(card);
+    });
   </script>
-</body>
-  </html>
+ </body>
+       </html>
