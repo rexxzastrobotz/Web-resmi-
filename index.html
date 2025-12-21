@@ -11,7 +11,6 @@
 
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -26,7 +25,7 @@
 
 <body class="bg-white text-slate-800">
 
-<!-- ===== THUMBNAIL (AREA MERAH) ===== -->
+<!-- THUMBNAIL -->
 <section class="max-w-6xl mx-auto px-6 pt-6 reveal active">
   <div class="w-full h-[160px] md:h-[220px] rounded-2xl overflow-hidden shadow-md">
     <img
@@ -37,7 +36,7 @@
   </div>
 </section>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="max-w-6xl mx-auto px-6 pt-10 pb-24">
   <div class="grid md:grid-cols-2 gap-12 items-center reveal active">
 
@@ -82,12 +81,54 @@
   </div>
 </section>
 
-<footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+<!-- PRICING -->
+<section id="pricing" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center reveal">
+      Paket <span class="text-purple-600">Sewa Bot</span>
+    </h2>
+
+    <div class="mt-14 grid md:grid-cols-4 gap-8">
+      <div class="rounded-2xl border p-6 text-center reveal">
+        <h3 class="font-semibold">15 Hari</h3>
+        <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 3.000</p>
+        <a href="https://wa.me/6287842203625" class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold">
+          Sewa Sekarang
+        </a>
+      </div>
+
+      <div class="rounded-2xl border p-6 text-center reveal">
+        <h3 class="font-semibold">30 Hari</h3>
+        <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 5.000</p>
+        <a href="https://wa.me/6287842203625" class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold">
+          Sewa Sekarang
+        </a>
+      </div>
+
+      <div class="rounded-2xl border-2 border-purple-600 p-6 text-center shadow-xl reveal">
+        <h3 class="font-semibold">60 Hari</h3>
+        <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 10.000</p>
+        <a href="https://wa.me/6287842203625" class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold">
+          Sewa Sekarang
+        </a>
+      </div>
+
+      <div class="rounded-2xl border p-6 text-center reveal">
+        <h3 class="font-semibold">Permanen</h3>
+        <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 20.000</p>
+        <a href="https://wa.me/6287842203625" class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold">
+          Sewa Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t py-8 text-center text-sm text-slate-500">
   © 2024 Alecia Bot. All rights reserved.
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -97,15 +138,11 @@
     });
   }, { threshold: 0.15 });
 
-  reveals.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
-</html>        <h3 class="font-semibold text-lg">Stabil & Aman</h3>
-        <p class="text-sm text-slate-500 mt-2">Server stabil & aman.</p>
-      </div>
-    </div>
-  </div>
+      </html>+ jgj o   </div>
 </section>
 
 <!-- PRICING -->
