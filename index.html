@@ -15,20 +15,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-
-    /* Animasi */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all .8s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: all .8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
     .delay-1 { transition-delay: .1s }
     .delay-2 { transition-delay: .2s }
     .delay-3 { transition-delay: .3s }
@@ -36,16 +25,37 @@
   </style>
 </head>
 
-<body class="bg-white text-slate-800">
+<body class="bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100">
 
-<!-- ================= THUMBNAIL UTAMA ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <div class="flex items-center gap-2 font-bold text-lg">
+      <span class="w-2 h-2 rounded-full bg-purple-600"></span>
+      Astrobot
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#features" class="hover:text-purple-600">Fitur</a>
+      <a href="#pricing" class="hover:text-purple-600">Harga</a>
+      <a href="#contact" class="hover:text-purple-600">Kontak</a>
+    </nav>
+
+    <button id="themeToggle"
+      class="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm">
+      🌙 Dark
+    </button>
+
+  </div>
+</header>
+
+<div class="h-16"></div>
+
+<!-- ================= THUMBNAIL ================= -->
 <section class="max-w-6xl mx-auto px-6 pt-6 reveal active">
   <div class="w-full h-[160px] md:h-[220px] rounded-2xl overflow-hidden shadow-md">
-    <img
-      src="https://d.top4top.io/p_3642214em0.png"
-      alt="Astrobot Thumbnail"
-      class="w-full h-full object-cover"
-    />
+    <img src="https://d.top4top.io/p_3642214em0.png" class="w-full h-full object-cover">
   </div>
 </section>
 
@@ -63,49 +73,93 @@
         Otomatis untuk Grup & Pribadi
       </h1>
 
-      <p class="mt-5 text-slate-600 max-w-lg">
+      <p class="mt-5 text-slate-600 dark:text-slate-300 max-w-lg">
         Astrobot adalah sewabot WhatsApp multi-fitur untuk auto-reply,
         manajemen grup, game, downloader, dan kebutuhan harian.
-        Aktif 24/7, stabil, dan mudah digunakan.
       </p>
 
       <div class="mt-8 flex gap-4">
         <a href="#pricing"
-           class="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold shadow-lg shadow-purple-200 hover:bg-purple-700 transition">
+          class="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold">
           Lihat Harga
         </a>
         <a href="https://wa.me/6287842203625"
-           class="px-6 py-3 rounded-xl border border-purple-200 text-purple-600 font-semibold hover:bg-purple-50 transition">
+          class="px-6 py-3 rounded-xl border border-purple-300 text-purple-600 font-semibold">
           Hubungi Admin
         </a>
       </div>
     </div>
 
+    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-xl">
+      <h3 class="font-bold text-lg mb-3">Fitur Unggulan</h3>
+      <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-1 list-disc list-inside">
+        <li>Brat & BratVid</li>
+        <li>TikTok / IG / FB Downloader</li>
+        <li>Sticker Maker</li>
+        <li>AI Chat</li>
+        <li>Game & Tools Grup</li>
+      </ul>
+    </div>
 
-<!-- ================= HERO (KOLOM KANAN / FITUR UNGGULAN) ================= -->
-    <div class="relative">
-      <div class="absolute -top-6 -left-6 w-24 h-24 bg-purple-100 rounded-full blur-2xl"></div>
+  </div>
+</section>
 
-      <div class="relative bg-white border border-slate-200 rounded-2xl p-8 shadow-xl">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="fas fa-robot text-4xl text-purple-600"></i>
-          <h3 class="font-bold text-lg">Astrobot</h3>
-        </div>
+<!-- ================= FEATURES ================= -->
+<section id="features" class="bg-slate-50 dark:bg-slate-800 py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center">Kenapa Astrobot?</h2>
 
-        <p class="text-sm text-slate-500 mb-3">
-          ⭐ <span class="font-semibold">Fitur Unggulan Populer</span><br>
-          Nikmati berbagai fitur favorit yang paling sering digunakan:
-        </p>
+    <div class="mt-12 grid md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl border">
+        <h3 class="font-semibold">Cepat</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Respon otomatis tanpa delay.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl border">
+        <h3 class="font-semibold">Lengkap</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Manajemen grup & downloader.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-700 p-6 rounded-2xl border">
+        <h3 class="font-semibold">Stabil</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Server stabil & aman.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <ul class="text-sm text-slate-500 space-y-1 list-disc list-inside">
-          <li><b>Brat</b> – Ubah teks jadi stiker unik & lucu</li>
-          <li><b>BratVid</b> – Versi video Brat yang estetik</li>
-          <li><b>TikTok Downloader</b> – Tanpa watermark</li>
-          <li><b>Instagram Downloader</b> – Foto, video & reel</li>
-          <li><b>Facebook Downloader</b> – Simpan video FB</li>
-          <li><b>Sticker Maker</b> – Dari foto atau video</li>
-          <li><b>AI Chat</b> – Ngobrol & tanya apa saja</li>
-          <li><b>Game & Fun</b> – Game seru pengisi waktu</li>
+<!-- ================= PRICING ================= -->
+<section id="pricing" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center">Harga</h2>
+    <div class="mt-10 grid md:grid-cols-4 gap-6">
+      <div class="p-6 border rounded-2xl text-center">Rp 3.000<br>15 Hari</div>
+      <div class="p-6 border rounded-2xl text-center">Rp 5.000<br>30 Hari</div>
+      <div class="p-6 border-2 border-purple-600 rounded-2xl text-center">Rp 10.000<br>60 Hari</div>
+      <div class="p-6 border rounded-2xl text-center">Rp 20.000<br>Permanen</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="border-t border-slate-200 dark:border-slate-700 py-10 text-center text-sm">
+  <p>© 2024 Astrobot. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(e=>{
+    e.forEach(x=>{ if(x.isIntersecting){x.target.classList.add('active')} })
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  const toggle=document.getElementById('themeToggle');
+  if(localStorage.theme==='dark'){document.documentElement.classList.add('dark')}
+  toggle.onclick=()=>{
+    document.documentElement.classList.toggle('dark');
+    localStorage.theme=document.documentElement.classList.contains('dark')?'dark':'light';
+  }
+</script>
+
+</body>
+                                                                                     </html>          <li><b>Game & Fun</b> – Game seru pengisi waktu</li>
           <li><b>Tools Grup</b> – Welcome & anti-link</li>
           <li><b>RPG & Ekonomi</b> – Game RPG di grup</li>
         </ul>
