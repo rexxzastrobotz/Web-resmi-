@@ -18,14 +18,31 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
     }
+
+    /* ===== ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: .1s }
+    .delay-2 { transition-delay: .2s }
+    .delay-3 { transition-delay: .3s }
+    .delay-4 { transition-delay: .4s }
   </style>
 </head>
 
 <body class="bg-white text-slate-800">
 
-<!-- ================= HERO ================= -->
-<section class="max-w-6xl mx-auto px-6 pt-16 pb-20">
-  <div class="grid md:grid-cols-2 gap-12 items-center">
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 pt-20 pb-24">
+  <div class="grid md:grid-cols-2 gap-12 items-center reveal active">
     
     <div>
       <span class="inline-block mb-4 px-4 py-1 text-sm rounded-full bg-purple-100 text-purple-600 font-medium">
@@ -40,7 +57,7 @@
         Aktif 24/7, stabil, dan mudah digunakan.
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="mt-8 flex gap-4">
         <a href="#pricing"
            class="px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold shadow-lg shadow-purple-200 hover:bg-purple-700 transition">
           Lihat Harga
@@ -58,7 +75,7 @@
         <i class="fas fa-robot text-5xl text-purple-600 mb-4"></i>
         <h3 class="font-bold text-lg">Alecia Bot</h3>
         <p class="text-sm text-slate-500 mt-2">
-          Bot WhatsApp pintar untuk kebutuhan harian dan komunitas.
+          Bot WhatsApp pintar untuk kebutuhan harian.
         </p>
       </div>
     </div>
@@ -66,98 +83,79 @@
   </div>
 </section>
 
-<!-- ================= FEATURES ================= -->
+<!-- FEATURES -->
 <section class="bg-slate-50 py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center">
+    <h2 class="text-3xl font-bold text-center reveal">
       Kenapa Pakai <span class="text-purple-600">Alecia Bot?</span>
     </h2>
 
     <div class="mt-12 grid md:grid-cols-3 gap-8">
-
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 reveal delay-1">
         <i class="fas fa-bolt text-purple-600 text-2xl mb-4"></i>
         <h3 class="font-semibold text-lg">Respon Otomatis</h3>
-        <p class="text-sm text-slate-500 mt-2">
-          Balas pesan dan perintah secara instan tanpa delay.
-        </p>
+        <p class="text-sm text-slate-500 mt-2">Balas pesan instan tanpa delay.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 reveal delay-2">
         <i class="fas fa-users text-purple-600 text-2xl mb-4"></i>
         <h3 class="font-semibold text-lg">Manajemen Grup</h3>
-        <p class="text-sm text-slate-500 mt-2">
-          Welcome, anti-link, game, dan sistem admin otomatis.
-        </p>
+        <p class="text-sm text-slate-500 mt-2">Welcome, anti-link, game.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 reveal delay-3">
         <i class="fas fa-shield-halved text-purple-600 text-2xl mb-4"></i>
         <h3 class="font-semibold text-lg">Stabil & Aman</h3>
-        <p class="text-sm text-slate-500 mt-2">
-          Server stabil dan aman untuk jangka panjang.
-        </p>
+        <p class="text-sm text-slate-500 mt-2">Server stabil & aman.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ================= PRICING ================= -->
+<!-- PRICING -->
 <section id="pricing" class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center">
+    <h2 class="text-3xl font-bold text-center reveal">
       Paket <span class="text-purple-600">Sewa Bot</span>
     </h2>
-    <p class="text-center text-slate-500 mt-2">
-      Pilih paket sesuai kebutuhanmu
-    </p>
 
     <div class="mt-14 grid md:grid-cols-4 gap-8">
 
-      <!-- 15 Hari -->
-      <div class="rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition">
-        <h3 class="font-semibold text-lg">15 Hari</h3>
+      <div class="rounded-2xl border border-slate-200 p-6 text-center reveal delay-1">
+        <h3 class="font-semibold">15 Hari</h3>
         <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 3.000</p>
-        <p class="text-sm text-slate-500 mt-2">Cocok untuk coba fitur</p>
         <a href="https://wa.me/6287842203625"
-           class="mt-6 inline-block w-full py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+           class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
           Sewa Sekarang
         </a>
       </div>
 
-      <!-- 30 Hari -->
-      <div class="rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition">
-        <h3 class="font-semibold text-lg">30 Hari</h3>
+      <div class="rounded-2xl border border-slate-200 p-6 text-center reveal delay-2">
+        <h3 class="font-semibold">30 Hari</h3>
         <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 5.000</p>
-        <p class="text-sm text-slate-500 mt-2">Paket bulanan</p>
         <a href="https://wa.me/6287842203625"
-           class="mt-6 inline-block w-full py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+           class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
           Sewa Sekarang
         </a>
       </div>
 
-      <!-- 60 Hari -->
-      <div class="rounded-2xl border-2 border-purple-600 p-6 text-center shadow-xl">
-        <span class="inline-block mb-2 text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+      <div class="rounded-2xl border-2 border-purple-600 p-6 text-center shadow-xl reveal delay-3">
+        <span class="text-xs bg-purple-100 text-purple-600 px-3 py-1 rounded-full font-semibold">
           Best Value
         </span>
-        <h3 class="font-semibold text-lg">60 Hari</h3>
+        <h3 class="font-semibold mt-3">60 Hari</h3>
         <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 10.000</p>
-        <p class="text-sm text-slate-500 mt-2">Lebih hemat</p>
         <a href="https://wa.me/6287842203625"
-           class="mt-6 inline-block w-full py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+           class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
           Sewa Sekarang
         </a>
       </div>
 
-      <!-- Permanen -->
-      <div class="rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition">
-        <h3 class="font-semibold text-lg">Permanen</h3>
+      <div class="rounded-2xl border border-slate-200 p-6 text-center reveal delay-4">
+        <h3 class="font-semibold">Permanen</h3>
         <p class="text-3xl font-extrabold text-purple-600 mt-4">Rp 20.000</p>
-        <p class="text-sm text-slate-500 mt-2">Bayar sekali</p>
         <a href="https://wa.me/6287842203625"
-           class="mt-6 inline-block w-full py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
+           class="mt-6 block py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">
           Sewa Sekarang
         </a>
       </div>
@@ -166,30 +164,24 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
   © 2024 Alecia Bot. All rights reserved.
 </footer>
-  </main>
-  <script>
-    // Animasi masuk awal saat load
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("article").forEach((card, i) => {
-        setTimeout(() => card.classList.add("active"), i * 200);
-      });
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15 });
 
-    // Scroll animasi
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 
-    document.querySelectorAll("article").forEach(card => observer.observe(card));
-  </script>
- </body>
-</html>
+</body>
+  </html>
