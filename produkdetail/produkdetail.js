@@ -256,7 +256,8 @@
     } catch (_) {}
 
     const message = [
-      'halo min',
+      'Halo Admin, saya ingin menanyakan mengenai pesanan berikut:',
+      '',
       'berikut *PESANAN SEWA BOT ASTROBOT*',
       '',
       `Paket: ${selectedPackage.code}`,
