@@ -403,3 +403,5 @@ img { display: block; max-width: 100%; }
   *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+.price-grid.price-grid-single { grid-template-columns: minmax(0,420px); justify-content: center; }
